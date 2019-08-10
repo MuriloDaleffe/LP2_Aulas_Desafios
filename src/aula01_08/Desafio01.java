@@ -7,7 +7,7 @@ public class Desafio01 {
     private int[] vetor;
     private int max = 26, num = 5, aux;
     private boolean gen = false;
-    Random numAl = new Random();
+    private Random numAl = new Random();
 
     public Desafio01() {
         long tempoInicial = System.nanoTime();
@@ -18,7 +18,7 @@ public class Desafio01 {
         }
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
-                while (gen == false) {
+                while (!gen) {
                     aux = numAl.nextInt(max);
                     if (vetor[aux] >= 0) {
                         matriz[i][j] = vetor[aux];
@@ -31,9 +31,9 @@ public class Desafio01 {
         }
         long tempoFinal = System.nanoTime();
         System.out.println();
-        for (int i = 0; i < matriz.length; i++) {
+        for (int[] ints : matriz) {
             for (int j = 0; j < matriz[0].length; j++) {
-                System.out.print(matriz[i][j] + "\t");
+                System.out.print(ints[j] + "\t");
             }
             System.out.println();
         }
@@ -47,3 +47,4 @@ public class Desafio01 {
 
         new Desafio01();
     }
+}

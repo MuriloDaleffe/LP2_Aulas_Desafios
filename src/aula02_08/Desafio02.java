@@ -45,3 +45,4 @@ public class Desafio02 {
                 + intervaloSec + " segundos");
 
     }
+}
